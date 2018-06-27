@@ -16,14 +16,15 @@ class Word < String
   end
 end
 
-puts "Enter a sentence:"
+print "Enter a sentence: "
 string = gets.chomp
-puts "Enter the word you want to replace:"
+print "Enter the word you want to replace: "
 input1 = gets.chomp
-puts "Enter the word to replace it with:"
+print "Enter the word to replace it with: "
 input2 = gets.chomp
+puts `clear`
 new_phrase = Word.new(string, input1, input2)
-puts "Now running..."
-puts "Here is your sentence:"
+puts "Now running... "
+puts "Here is your sentence: "
 final_phrase = new_phrase.replace_inputted_words
 puts final_phrase
