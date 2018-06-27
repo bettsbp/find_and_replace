@@ -1,21 +1,22 @@
 class Word < String
-  def initialize(string)
+
+  def initialize(string, input1, input2)
     @string = string
+    @i1 = input1
+    @i2 = input2
   end
 
-  def show_string
-    @string
-  end
-
-  def replace_word
-    new_array = @string.split(" ")
+  def replace_inputted_words
+    new_array = @string.capitalize.split(" ")
     x = 0
-    print new_array
-    while (x < new_array.length) do |x|
-      if new_array|x|.include?("world") do
-        new_array.sub!("world", "universe")
+    if new_array.include?(@i1)
+      new_array.each do |word|
+        word.sub! @i1, @i2
+        x += 1
       end
-      x += 1
     end
+    finished_array = new_array.join(" ")
+    print finished_array
+    finished_array
   end
 end
