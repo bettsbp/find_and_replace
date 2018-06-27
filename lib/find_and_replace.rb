@@ -7,15 +7,11 @@ class Word < String
   end
 
   def replace_inputted_words
-    new_array = @string.capitalize.split(" ")
-    x = 0
-    if new_array.include?(@i1)
-      new_array.each do |word|
-        word.sub! @i1, @i2
-        x += 1
-      end
+    new_array = @string.downcase.capitalize.split(" ")
+    new_array.each do |word|
+      word.sub! @i1, @i2
     end
-    finished_array = new_array.join(" ")
+    finished_array = (new_array.join(" ") + ".")
     print finished_array
     finished_array
   end
